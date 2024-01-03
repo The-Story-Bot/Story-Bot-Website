@@ -1,0 +1,708 @@
+
+body {
+ 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  padding-top: 10px;
+}
+
+.title {
+  font-size: 4rem;
+  text-align: center;
+  word-break: break-word;
+  font-family: 'Montserrat', sans-serif;
+
+  color: rgba(243, 241, 241, 0.575);
+  margin-left: -20px;
+  text-shadow: 0 0 10px #606060, 0 0 20px #717171, 0 0 30px #f8f8f8, 0 0 40px #8e8e8e;
+}
+div h1{
+  padding-top: 200px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Floating effect */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating {
+  animation: float 1s ease-in-out infinite;
+}
+
+/* Image resizing */
+@keyframes walk {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(10%) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(20%) rotate(0deg);
+  }
+  75% {
+    transform: translateX(10%) rotate(5deg);
+  }
+}
+
+
+
+.row.mt-5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#generate-number-btn {
+  border-radius: 50px;
+  background-color: #636364; /* light blue */
+  background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2), transparent),
+                    radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.2), transparent),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 100%);
+  background-size: 50px 50px;
+  color: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), inset 0px -10px 20px rgba(255, 255, 255, 0.2);
+  border: 3px solid #FFFFFF;
+  padding: 20px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  top: -10px;
+  margin-top: 50px;
+}
+
+@keyframes pop-up {
+   0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #7c1eff;
+  }
+  50% {
+    box-shadow: 0 0 50px #7c1eff;
+  }
+  100% {
+    box-shadow: 0 0 10px #7c1eff;
+  }
+}
+
+.number-box {
+  display: inline-block;
+  padding: 20px;
+  border: 2px solid #7c1eff;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 2rem;
+  color: #7c1eff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+}
+
+input[type="text"] {
+  border-radius: 10px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00f;
+}
+#random-number-container {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center items horizontally */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Enable horizontal scrolling if content is wider than the screen */
+}
+
+.digit-box {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #7c1eff;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 3rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+
+
+  .digit-box {
+    padding: 5px 10px;
+    font-size: .5rem;
+  }
+
+  #generate-number-btn {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .row.mt-5 {
+    position: static;
+    transform: none;
+    order: 2;
+  }
+
+  .col-12.col-lg-6.d-flex.align-items-center.justify-content-center.flex-column {
+    align-self: flex-start;
+  }
+
+  .btn-primary {
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  #shareOnTwitterBtn {
+    border-radius: 20px;
+    box-shadow: 0 0 10px #7c1eff;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  #shareOnTwitterBtn:hover {
+    box-shadow: 0 0 50px #7c1eff;
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #7c1eff;
+    }
+    50% {
+      box-shadow: 0 0 50px #7c1eff;
+    }
+    100% {
+      box-shadow: 0 0 10px #7c1eff;
+    }
+  }
+}
+.confetti-container{
+  padding-top: 500px;
+}
+
+/* Wheel container styling */
+.wheel-container {
+  position: fixed; /* Use fixed for a consistent position */
+  top: 5%; /* Adjust the top value as needed */
+  left: 5%; /* Adjust the left value as needed */
+  width: 200px; /* Adjust the size as needed */
+  height: 200px; /* Adjust the size as needed */
+  perspective: 1000px;
+  z-index: 100; /* Ensure it's above other elements */
+}
+
+/* Wheel list styling */
+.wheel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.wheel-list li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transform: translateZ(100px); /* Adjust the translateZ value to move items closer to the center */
+}
+
+.wheel-list a {
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Blocky Font', sans-serif; /* Replace 'Blocky Font' with the font you choose */
+  text-transform: uppercase; /* Make the text uppercase for a blocky appearance */
+  text-decoration: none; /* Remove underlines */
+}
+
+@media (max-width: 767px) {
+  .wheel-container {
+      width: 150px; /* Smaller size for mobile */
+      height: 100px; /* Smaller size for mobile */
+  }
+}
+
+/* Body and HTML styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Background video styles */
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+}
+
+/* Content styling above the video */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Center the logo at the top of the page */
+.header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+.fit-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Style for the logo container */
+.logo-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* Updated glow effect with a subtle pulsating effect */
+.round-frame {
+  width: 200px; /* Adjust the size as needed */
+  height: 200px; /* Adjust the size as needed */
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+/* Create rotating rings */
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  animation: rotateRing 6s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Keyframes for rotating rings */
+@keyframes rotateRing {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Style for the logo container */
+.round-frame::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-image: url("images/STORY1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+/* Style for the radiating glow effect */
+.round-frame::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
+  animation: glow 4s linear infinite alternate;
+}
+
+/* Keyframes for the radiating glow effect */
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#bot-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 9999;
+}
+
+#bot-icon img {
+  width: 50px; /* Adjust the size as needed */
+  position: relative; /* or absolute, depending on your layout */
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+
+
+.bot-message {
+  background-color: #0073e6; /* Bot bubble background color */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+@keyframes roll-in {
+  0% {
+      transform: translate(-50%, -50%) rotate(-360deg) scale(0);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
+.round-frame {
+  /* ... existing styles ... */
+  animation: roll-in 1s forwards;
+}
+
+@keyframes bubble-pop-up {
+  0% {
+      transform: scale(0);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.2);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.chat-bubble {
+  /* ... existing styles ... */
+  display: block; /* Change from 'none' to 'block' */
+  animation: bubble-pop-up 0.5s forwards;
+}
+.chat-bubble {
+  display: block; /* Temporarily set to block for testing */
+  max-width: 300px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-family: 'Press Start 2P', cursive;
+  color: black; /* Ensure text color is visible */
+}
+#bot-intro, .chat-container, #bot-icon, #bot-chat {
+  background-color: transparent;
+  position: relative; /* Adjust if necessary */
+  z-index: 3;
+  max-width: 100%;
+  max-height: 100%;
+  
+   /* Remove black background */
+  /* Other existing styles... */
+}
+#bot-chat {
+  position: absolute;
+  top: 30%; /* Adjust as needed to position chat bubbles below the bot icon */
+  left: -10%;
+  transform: translateX(-50%);
+  z-index: 2; /* Ensure this is lower than bot icon */
+}
+
+
+
+#bot-intro, .chat-container {
+  margin-top: 150px; /* Adjust this value as needed */
+  /* Other existing styles... */
+}
+/* If .round-frame is absolutely positioned */
+
+.chat-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure this is lower than bot icon */
+}
+#bot-chat {
+  display: inline-block;
+  margin-left: 10px;
+  font-family: 'Press Start 2P', cursive; /* Use the Press Start 2P font */
+  position: relative; /* or absolute, depending on your layout */
+  z-index: 2;
+}
+.round-frame {
+  position: absolute;
+  top: 10%; /* Adjust as needed to position the bot icon */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; /* Higher z-index to be on top */
+}
+
+@media (max-width: 767px) {
+  /* Chat container adjustments */
+  .chat-container {
+      width: 95%; /* Increase width to use more screen space */
+      margin: 0 auto; /* Center container */
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center items vertically */
+      justify-content: center; /* Center items horizontally */
+      order: 1; /* Ensure chat container comes first */
+  }
+
+  /* Chat bubble adjustments */
+  .chat-bubble {
+      font-size: 16px; /* Larger font for readability */
+      padding: 15px; /* Ample padding */
+      max-width: 100%; /* Use full container width */
+      margin: 10px auto; /* Space between bubbles and auto margin for centering */
+      word-wrap: break-word; /* Ensure long words do not overflow */
+  }
+
+  /* Position bot icon below the chat container */
+  .round-frame {
+      position: absolute; /* Absolute positioning */
+      width: 120px; /* Smaller size */
+      height: 120px; /* Keep aspect ratio */
+      bottom: 10px; /* Position at the bottom */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Adjust for centering */
+      order: 2; /* Ensure it comes after chat container */
+  }
+
+  /* Adjust bot icon image size */
+  #bot-icon img {
+      width: 100%; /* Full width of the container */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Additional adjustments for buttons, number container, header image, and wheel list */
+  /* ... */
+}
+
+/* Continue with other existing CSS */
+
+.left-aligned-text p {
+  text-align: left;
+  padding-left: 140px; /* 100 pixels padding on the left */
+  color: #FFFFFF;
+  padding-top: 108px;
+  font-family: 'Press Start 2P', cursive;
+
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive; /* Block text font */
+  color: white; /* Text color */
+  background-color: transparent; /* Optional: can set a background color */
+  padding: 20px 0; /* Some padding around the text */
+}
+
+
+@keyframes epicExit {
+  0%, 100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      filter: brightness(1);
+  }
+  20% {
+      transform: scale(1.5) rotate(720deg); /* Begin with more rotation */
+      filter: brightness(2);
+  }
+  40% {
+      transform: scale(2) rotate(1440deg); /* Continue rotation and zoom */
+      filter: brightness(3);
+  }
+  60% {
+      transform: scale(2.5) rotate(2160deg); /* Further rotation and zoom */
+      filter: brightness(4);
+  }
+  80% {
+      transform: scale(3) rotate(2880deg); /* Final rotation and maximum zoom */
+      filter: brightness(5);
+  }
+  90% {
+      opacity: 0.5; /* Start to fade out */
+      transform: scale(3.5) rotate(3240deg); /* Penultimate step */
+      filter: brightness(6);
+  }
+  100% {
+      opacity: 0; /* Completely fade out */
+      transform: scale(4) rotate(3600deg); /* Final rotation and zoom out */
+      filter: brightness(0);
+  }
+}
+
+.round-frame.disappear-animation {
+  animation: epicExit 3s forwards; /* Adjust duration for smoothness */
+}
+/* Responsive design adjustments for mobile screens */
+@media (max-width: 767px) {
+  .digit-box {
+      display: inline-block; /* Display numbers inline */
+      padding: 2px 5px; /* Reduced padding */
+      font-size: 1rem; /* Reduced font size */
+      margin: 0 1px; /* Reduced margin */
+  }
+
+  #random-number-container {
+      max-width: 100%; /* Ensure it doesn't exceed the screen width */
+      overflow-x: auto; /* Allow horizontal scrolling */
+      white-space: nowrap; /* Keep all digits in a single line */
+  }
+}
+/* Add CSS to style the image */
+header img {
+  max-width: 100px; /* Adjust the maximum width of the image */
+  margin-right: 20px; /* Add margin to separate the image from the title */
+}
+/* Add CSS to move the image to the right */
+.header-image {
+  float: right; /* Use float to move the image to the right */
+  margin-right: 20px; /* Adjust the margin as needed for spacing */
+  /* You can add more styling as needed */
+}
+
+/* Add a media query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+  .header-image {
+      float: none; /* Remove float for mobile screens */
+      margin-right: 0; /* Remove margin for mobile screens */
+      display: block; /* Display the image as a block element for mobile screens */
+      max-width: 100%; /* Ensure the image fits within the screen width */
+  }
+}
+
+
+@media (max-width: 767px) {
+  /* Center the button horizontally */
+  .col-12.col-lg-6.d-flex.align-items-center.justify-content-center.flex-column {
+    text-align: center; /* Center content horizontally */
+  }
+
+  #generate-number-btn {
+    margin: 0 auto; /* Center the button */
+    padding: 10px; /* Maintain the existing padding */
+    font-size: 1rem; /* Adjust the font size as needed */
+  }
+
+  /* Center the random number container horizontally */
+  #random-number-container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  /* Adjustments for .digit-box if needed */
+  .digit-box {
+    padding: 5px 10px; /* Adjust padding as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+  }
+
+  /* Other responsive styles */
+}
+
+/* Continue with any other existing CSS */
+
+
+/* Continue with any other existing CSS */
+.small-logo {
+  position: absolute; /* Position the image absolutely within its relative parent */
+  top: 10px; /* Adjust as needed for spacing from the top */
+  right: 10px; /* Adjust as needed for spacing from the right */
+  width: 100px; /* Adjust the size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+
