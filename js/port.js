@@ -53,7 +53,7 @@ window.addEventListener('scroll', () => {
 
     }, delay);
 });
-const text = "University of Oshkosh Wisconsin\n\nStudying: Applied Computing\n\nYears of education: 2023 to Present";
+const text = "Story Bot was created to enhance the user experience within your discord community";
 
 let typingInterval;
 
