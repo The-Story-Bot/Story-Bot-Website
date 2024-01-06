@@ -1,0 +1,511 @@
+header {
+    padding-top: 10px;
+  }
+  
+  .title {
+    font-size: 4rem;
+    text-align: center;
+    word-break: break-word;
+    font-family: 'Montserrat', sans-serif;
+  
+    color: rgba(243, 241, 241, 0.575);
+    margin-left: -20px;
+    text-shadow: 0 0 10px #606060, 0 0 20px #717171, 0 0 30px #f8f8f8, 0 0 40px #8e8e8e;
+  }
+  div h1{
+    padding-top: 200px;
+  }
+  
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+  
+  /* Floating effect */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .floating {
+    animation: float 1s ease-in-out infinite;
+  }
+  
+  /* Image resizing */
+  @keyframes walk {
+    0%, 100% {
+      transform: translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(10%) rotate(-5deg);
+    }
+    50% {
+      transform: translateX(20%) rotate(0deg);
+    }
+    75% {
+      transform: translateX(10%) rotate(5deg);
+    }
+  }
+  
+  
+  
+  .row.mt-5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #generate-number-btn {
+    border-radius: 50px;
+    background-color: #636364; /* light blue */
+    background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2), transparent),
+                      radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.2), transparent),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 100%);
+    background-size: 50px 50px;
+    color: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), inset 0px -10px 20px rgba(255, 255, 255, 0.2);
+    border: 3px solid #FFFFFF;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+    margin-top: 50px;
+  }
+  
+  @keyframes pop-up {
+     0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #7c1eff;
+    }
+    50% {
+      box-shadow: 0 0 50px #7c1eff;
+    }
+    100% {
+      box-shadow: 0 0 10px #7c1eff;
+    }
+  }
+  
+  .number-box {
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #7c1eff;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    color: #7c1eff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+  }
+  
+  input[type="text"] {
+    border-radius: 10px;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00f;
+  }
+  #random-number-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling if content is wider than the screen */
+  }
+  
+  .digit-box {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #7c1eff;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 3rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+  }
+  
+  @media (max-width: 767px) {
+    .title {
+      font-size: 1.8rem;
+    }
+  
+  
+  
+    .digit-box {
+      padding: 5px 10px;
+      font-size: .5rem;
+    }
+  
+    #generate-number-btn {
+      padding: 10px;
+      font-size: 1rem;
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .row.mt-5 {
+      position: static;
+      transform: none;
+      order: 2;
+    }
+  
+    .col-12.col-lg-6.d-flex.align-items-center.justify-content-center.flex-column {
+      align-self: flex-start;
+    }
+  
+    .btn-primary {
+      background-color: #1da1f2;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1rem;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+  
+    #shareOnTwitterBtn {
+      border-radius: 20px;
+      box-shadow: 0 0 10px #7c1eff;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+  
+    #shareOnTwitterBtn:hover {
+      box-shadow: 0 0 50px #7c1eff;
+      animation: glow 2s ease-in-out infinite;
+    }
+  
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px #7c1eff;
+      }
+      50% {
+        box-shadow: 0 0 50px #7c1eff;
+      }
+      100% {
+        box-shadow: 0 0 10px #7c1eff;
+      }
+    }
+  }
+  .confetti-container{
+    padding-top: 500px;
+  }
+  @media (max-width: 767px) {
+    .digit-box {
+        display: inline-block; /* Display numbers inline */
+        padding: 2px 5px; /* Reduced padding */
+        font-size: 1rem; /* Reduced font size */
+        margin: 0 1px; /* Reduced margin */
+    }
+  
+    #random-number-container {
+        max-width: 100%; /* Ensure it doesn't exceed the screen width */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        white-space: nowrap; /* Keep all digits in a single line */
+    }
+  }
+body, html {
+    min-height: 100%;
+    margin: 0;
+    background-color: #151313;
+    padding-bottom: 60px;
+}
+
+
+.side-bar {
+    position: fixed;
+    width: 75%; /* Bar covers 75% of the page width */
+    height: 200px; /* Bar height set to 200px */
+    background-color: #333; /* Example color, adjust as needed */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adding some shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 2000;
+    transition: transform 1.0s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px; /* Adjust as needed */
+  
+}
+.side-bar p {
+  font-family: 'Orbitron', sans-serif; /* Apply Orbitron font */
+  color: rgb(191, 240, 255); /* Choose a contrasting text color */
+  padding: 10px; /* Add some padding for better spacing */
+  /* Add any other styles as needed */
+}
+
+.left {
+    transition: transform 1.0s ease; /* Adjust the transition as necessary */
+}
+
+
+/* Positioning the bars at different heights */
+#bar1 { top: 5%; } /* Adjust the percentage as needed */
+#bar2 { top: 35%; } /* Positioned a third of the way down */
+#bar3 { top: 65%; } /* Further down the page */
+
+@media screen and (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .side-bar {
+      width: 85%; /* Adjust the width of the bars on smaller screens */
+      height: 100; /* Optional: adjust the height as needed */
+      padding: 0px;
+      /* Resetting top positioning */
+    }
+
+    .side-bar p {
+      font-size: 14px;
+      margin-bottom: 60px; /* Reduce font size on smaller screens */
+      /* Adjust any other styles as needed for better fit */
+  }
+    /* Adjusting the positions of the bars for smaller screens */
+    #bar1 { top: 10%; }
+    #bar2 { top: 40%; }
+    #bar3 { top: 70%; }
+}
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px; /* Adjust the gap between icons */
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 2000; /* Higher than the sliding bars */
+}
+
+
+footer img {
+    height: 24px; /* Adjust the size of Twitter icon */
+    width: auto;
+}
+
+footer a {
+    color: rgb(127, 244, 255); /* Change the color for Font Awesome icons */
+    font-size: 24px; /* Adjust the size as needed */
+    text-decoration: none;
+}
+
+footer a img {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(34%) saturate(600%) hue-rotate(80deg) brightness(100%) contrast(88%);
+    /* This filter is an example to turn images to a shade of green */
+}
+@media screen and (max-width: 768px) {
+    .footer-text {
+        font-size: 10px; /* Reduce the font size */
+        white-space: nowrap; /* Prevent wrapping */
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.button-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000; /* To ensure it's above other content */
+    width: 25%; /* Remaining space on desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px; /* Spacing between buttons */
+    
+}
+
+.button-container a {
+   
+    font-size: 24px; /* Adjust the size as needed */
+    text-decoration: none; /* Removes underline from links */
+    color:   rgb(127, 244, 255);;
+   
+}
+.button-container a:hover {
+    color: rgb(12, 76, 132); /* Slightly darker shade on hover */
+    
+}
+
+@media screen and (max-width: 768px) {
+    .button-container {
+        width: 15%; /* Adjusting for mobile */
+    }
+}
+#spinning-letters {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Behind other content but above the background */
+}
+#spinning-letterz {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Behind other content but above the background */
+}
+.letter {
+    display: inline-block;
+    font-family: 'Your Futuristic Font', sans-serif; /* Use a futuristic font */
+    font-size: 65px; /* Adjust size as needed */
+    margin: 0 10px;
+    color:  rgb(203, 242, 255); 
+    animation: spin 5s infinite linear;
+    font-family: 'Orbitron', sans-serif;/* Choose your color */
+    /* Add more styling to make it cubic and modern */
+}
+@keyframes spin {
+    0% { transform: rotateX(0); }
+    100% { transform: rotateX(360deg); }
+}
+@media screen and (max-width: 768px) {
+    .letter {
+        font-size: 3vw; /* Adjust the value as needed */
+    }
+}
+
+
+.footer-text {
+    font-family: 'Orbitron', sans-serif; /* Same as your spinning letters */
+    font-size: 12px; /* Adjust the size as needed */
+    color:  rgb(208, 243, 255); /* Adjust color as needed */
+    text-align: center;
+    margin-top: 10px; /* Adds space above the text */
+}
+.icon-container {
+    position: relative;
+}
+
+.popup-bubble {
+    position: absolute;
+    display: none;
+    width: 200px; /* Adjust as needed */
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    /* Position the bubble as needed */
+}
+
+.school-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.school-logo {
+    width: 30px; /* Adjust as needed */
+    height: auto;
+}
+
+.school-icon:hover + .popup-bubble {
+    display: block;
+}
+.popup-bubble {
+    max-width: 90%; /* Limits the width */
+    width: auto; /* Adjusts width based on content */
+    overflow: hidden; /* Prevents content from spilling out */
+    word-wrap: break-word; /* Ensures long words don't overflow */
+}
+
+
+.popup-bubble.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.button-container .school-icon {
+    position: relative;
+    /* ... other styles ... */
+}
+.button-container .popup-bubble {
+    position: absolute;
+    bottom: 100%; /* Adjust this value to position the bubble above the icon */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.button-container a:hover + .popup-bubble {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+.bubble-icon {
+    width: 20px; /* Adjust as needed */
+    height: auto;
+    margin-right: 5px; /* Space between icon and text */
+    /* Additional styling if needed */
+}
+.button-container a {
+    position: relative;
+}
+@media screen and (max-width: 768px) {
+    .button-container .popup-bubble {
+        width: 150px; /* Smaller width for mobile */
+        bottom: 120%; /* Adjust positioning */
+    }
+}
+.typing-text {
+    font-family: 'Orbitron', sans-serif; /* Apply the Orbitron font */
+    font-weight: bold; /* Make the text bold */
+    /* Add any other styling you need */
+}
+.bar-button {
+    position: absolute;
+    bottom: -80px; /* Adjust as needed */
+    right: -3px; /* Adjust as needed */
+    animation: bounceZoom 2s infinite ease-in-out;
+}
+
+.bar-button img {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+}
+@keyframes bounceZoom {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05); /* Subtler zoom */
+  }
+}
