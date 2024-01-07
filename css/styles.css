@@ -1,236 +1,4 @@
-header {
-    padding-top: 10px;
-  }
-  
-  .title {
-    font-size: 4rem;
-    text-align: center;
-    word-break: break-word;
-    font-family: 'Montserrat', sans-serif;
-  
-    color: rgba(243, 241, 241, 0.575);
-    margin-left: -20px;
-    text-shadow: 0 0 10px #606060, 0 0 20px #717171, 0 0 30px #f8f8f8, 0 0 40px #8e8e8e;
-  }
-  div h1{
-    padding-top: 200px;
-  }
-  
-  .logo {
-    height: 60px;
-    width: auto;
-  }
-  
-  /* Floating effect */
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  .floating {
-    animation: float 1s ease-in-out infinite;
-  }
-  
-  /* Image resizing */
-  @keyframes walk {
-    0%, 100% {
-      transform: translateX(0) rotate(0deg);
-    }
-    25% {
-      transform: translateX(10%) rotate(-5deg);
-    }
-    50% {
-      transform: translateX(20%) rotate(0deg);
-    }
-    75% {
-      transform: translateX(10%) rotate(5deg);
-    }
-  }
-  
-  
-  
-  .row.mt-5 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  #generate-number-btn {
-    border-radius: 50px;
-    background-color: #636364; /* light blue */
-    background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2), transparent),
-                      radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.2), transparent),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 100%);
-    background-size: 50px 50px;
-    color: #FFFFFF;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), inset 0px -10px 20px rgba(255, 255, 255, 0.2);
-    border: 3px solid #FFFFFF;
-    padding: 20px;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    position: relative;
-    top: -10px;
-    margin-top: 50px;
-  }
-  
-  @keyframes pop-up {
-     0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes glow {
-    0% {
-      box-shadow: 0 0 10px #7c1eff;
-    }
-    50% {
-      box-shadow: 0 0 50px #7c1eff;
-    }
-    100% {
-      box-shadow: 0 0 10px #7c1eff;
-    }
-  }
-  
-  .number-box {
-    display: inline-block;
-    padding: 20px;
-    border: 2px solid #7c1eff;
-    margin: 0 5px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.7);
-    font-size: 2rem;
-    color: #7c1eff;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
-  }
-  
-  input[type="text"] {
-    border-radius: 10px;
-  }
-  
-  input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 10px #00f;
-  }
-  #random-number-container {
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: nowrap; /* Prevent wrapping */
-    overflow-x: auto; /* Enable horizontal scrolling if content is wider than the screen */
-  }
-  
-  .digit-box {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 2px solid #7c1eff;
-    border-radius: 5px;
-    margin: 0 5px;
-    font-size: 3rem;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
-  }
-  
-  @media (max-width: 767px) {
-    .title {
-      font-size: 1.8rem;
-    }
-  
-  
-  
-    .digit-box {
-      padding: 5px 10px;
-      font-size: .5rem;
-    }
-  
-    #generate-number-btn {
-      padding: 10px;
-      font-size: 1rem;
-    }
-  
-    .row {
-      flex-direction: column;
-    }
-  
-    .row.mt-5 {
-      position: static;
-      transform: none;
-      order: 2;
-    }
-  
-    .col-12.col-lg-6.d-flex.align-items-center.justify-content-center.flex-column {
-      align-self: flex-start;
-    }
-  
-    .btn-primary {
-      background-color: #1da1f2;
-      border: none;
-      border-radius: 4px;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 1rem;
-      padding: 8px 16px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-  
-    #shareOnTwitterBtn {
-      border-radius: 20px;
-      box-shadow: 0 0 10px #7c1eff;
-      transition: box-shadow 0.3s ease-in-out;
-    }
-  
-    #shareOnTwitterBtn:hover {
-      box-shadow: 0 0 50px #7c1eff;
-      animation: glow 2s ease-in-out infinite;
-    }
-  
-    @keyframes glow {
-      0% {
-        box-shadow: 0 0 10px #7c1eff;
-      }
-      50% {
-        box-shadow: 0 0 50px #7c1eff;
-      }
-      100% {
-        box-shadow: 0 0 10px #7c1eff;
-      }
-    }
-  }
-  .confetti-container{
-    padding-top: 500px;
-  }
-  @media (max-width: 767px) {
-    .digit-box {
-        display: inline-block; /* Display numbers inline */
-        padding: 2px 5px; /* Reduced padding */
-        font-size: 1rem; /* Reduced font size */
-        margin: 0 1px; /* Reduced margin */
-    }
-  
-    #random-number-container {
-        max-width: 100%; /* Ensure it doesn't exceed the screen width */
-        overflow-x: auto; /* Allow horizontal scrolling */
-        white-space: nowrap; /* Keep all digits in a single line */
-    }
-  }
+
 body, html {
     min-height: 100%;
     margin: 0;
@@ -240,21 +8,22 @@ body, html {
 
 
 .side-bar {
-    position: fixed;
-    width: 75%; /* Bar covers 75% of the page width */
-    height: 200px; /* Bar height set to 200px */
-    background-color: #333; /* Example color, adjust as needed */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adding some shadow for depth */
-    border-radius: 10px; /* Rounded corners */
-    z-index: 2000;
-    transition: transform 1.0s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 20px; /* Adjust as needed */
-  
+  position: fixed;
+  width: 75%; /* Bar covers 75% of the page width */
+  height: 200px; /* Bar height set to 200px */
+  background-color: #333; /* Example color, adjust as needed */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adding some shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 2000;
+  transition: transform 1.0s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px; /* Adjust as needed */
+  /* Remove transform: translateX(-100%); from here */
 }
+
 .side-bar p {
   font-family: 'Orbitron', sans-serif; /* Apply Orbitron font */
   color: rgb(191, 240, 255); /* Choose a contrasting text color */
@@ -262,9 +31,13 @@ body, html {
   /* Add any other styles as needed */
 }
 
+
 .left {
-    transition: transform 1.0s ease; /* Adjust the transition as necessary */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 1.0s ease; /* Smooth transition for the sliding effect */
 }
+
+
 
 
 /* Positioning the bars at different heights */
@@ -368,18 +141,28 @@ html {
 }
 #spinning-letters {
     position: fixed;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1; /* Behind other content but above the background */
 }
 #spinning-letterz {
+  
     position: fixed;
-    top: 60%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1; /* Behind other content but above the background */
+    margin-bottom: 50px;
 }
+#spinning-letters1 {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Behind other content but above the background */
+}
+
 .letter {
     display: inline-block;
     font-family: 'Your Futuristic Font', sans-serif; /* Use a futuristic font */
@@ -508,4 +291,19 @@ html {
   50% {
       transform: scale(1.05); /* Subtler zoom */
   }
+}
+.video-container {
+  position: absolute; /* or 'absolute' if needed */
+  top:48%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 400px;
+  background-color: black;
+  border: 5px solid rgb(203, 242, 255);
+  box-shadow: 0 0 10px rgb(203, 242, 255), 0 0 20px rgb(203, 242, 255);
+  margin-top: 150px;
+  margin: 120px auto;
+  /* If needed, add a clear fix */
+  clear: both;
 }
