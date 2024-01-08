@@ -1,0 +1,370 @@
+body {
+    background-color: #151313;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  header {
+    padding-top: 10px;
+  }
+  
+  .title {
+    font-size: 4rem;
+    text-align: center;
+    word-break: break-word;
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(127, 244, 255);
+    margin-left: -20px;
+    text-shadow: 0 0 10px #06f4d4, 0 0 20px #238a72, 0 0 30px #5373cc, 0 0 40px #51ff99;
+  }
+  
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+  
+  /* Floating effect */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .floating {
+    animation: float 1.25s ease-in-out infinite;
+  }
+  
+  /* Image resizing */
+  @keyframes walk {
+    0%, 100% {
+      transform: translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(10%) rotate(-5deg);
+    }
+    50% {
+      transform: translateX(20%) rotate(0deg);
+    }
+    75% {
+      transform: translateX(10%) rotate(5deg);
+    }
+  }
+  
+ 
+  
+
+
+  
+  .row.mt-5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #generate-number-btn {
+    border-radius: 50px;
+    background-color:  rgb(127, 244, 255); /* light blue */
+    background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2), transparent),
+                      radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.2), transparent),
+                      linear-gradient(to bottom, rgba(100, 236, 222, 0.15) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 100%);
+    background-size: 50px 50px;
+    color: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), inset 0px -10px 20px rgba(255, 255, 255, 0.2);
+    border: 3px solid #FFFFFF;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+    margin-top: 50px;
+  }
+  
+  @keyframes pop-up {
+     0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px  rgb(127, 244, 255);
+    }
+    50% {
+      box-shadow: 0 0 50px  rgb(127, 244, 255);
+    }
+    100% {
+      box-shadow: 0 0 10px  rgb(127, 244, 255);
+    }
+  }
+  
+  .number-box {
+    display: inline-block;
+    padding: 20px;
+    border: 2px  rgb(127, 244, 255);
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color:  rgb(127, 244, 255);
+    font-size: 2rem;
+    color:  rgb(127, 244, 255);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+  }
+  
+  input[type="text"] {
+    border-radius: 10px;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00f;
+  }
+  
+  .digit-box {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #7c1eff;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 3rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.5);
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Adjust title font size for smaller screens */
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    /* Adjust the size and position of the button container */
+    .button-container {
+      width: 100%;
+      bottom: 0;
+      top: auto;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 10px 0;
+    }
+  
+    /* Adjust the size and style of the buttons in the button container */
+    .button-container a {
+      font-size: 1.5rem;
+    }
+  
+    .button-container .icon-text {
+      display: none; /* Hide the text to save space */
+    }
+  
+    .digit-box {
+        display: inline-block;
+        padding: 5px;
+        font-size: 2vw; /* Use viewport width to scale the font size */
+        margin: 0 2px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid #7c1eff;
+        color: #000000;
+        max-height: 50px; /* Set a maximum height */
+        white-space: nowrap; /* Prevent wrapping */
+        overflow: hidden; /* Hide overflow */
+        text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    }
+    
+  
+    /* Adjust the generate number button for mobile */
+    #generate-number-btn {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+    }
+  
+    /* Adjust the layout for the main content */
+    .row.mt-5 {
+      flex-direction: column-reverse;
+    }
+  
+    .col-12.col-lg-6.d-flex.align-items-center.justify-content-center.flex-column {
+      align-self: center;
+    }
+  
+    /* Additional adjustments as needed */
+  }
+  
+    .btn-primary {
+      background-color:  rgb(127, 244, 255);
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1rem;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+  
+    #shareOnTwitterBtn {
+      border-radius: 20px;
+      box-shadow: 0 0 10px  rgb(127, 244, 255);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+  
+    #shareOnTwitterBtn:hover {
+      box-shadow: 0 0 50px rgb(127, 244, 255);
+      animation: glow 2s ease-in-out infinite;
+    }
+  
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px  rgb(127, 244, 255);
+      }
+      50% {
+        box-shadow: 0 0 50px  rgb(127, 244, 255);
+      }
+      100% {
+        box-shadow: 0 0 10px  rgb(127, 244, 255);
+      }
+    }
+
+  footer {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px; 
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 2000; 
+}
+
+
+footer img {
+    height: 24px; 
+    width: auto;
+}
+
+footer a {
+    color: rgb(127, 244, 255); 
+    font-size: 24px; 
+    text-decoration: none;
+}
+
+footer a img {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(34%) saturate(600%) hue-rotate(80deg) brightness(100%) contrast(88%);
+    
+}
+@media screen and (max-width: 768px) {
+    .footer-text {
+        font-size: 10px; 
+        white-space: nowrap; 
+        padding-top: 5px;
+    }
+}
+.footer-text {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 12px; 
+    color:  rgb(208, 243, 255); 
+    text-align: center;
+    margin-top: 10px; 
+}
+.button-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000; 
+    width: 25%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    
+}
+
+.button-container a {
+   
+    font-size: 24px; 
+    text-decoration: none; 
+    color:   rgb(127, 244, 255);;
+   
+}
+.button-container a:hover {
+    color: rgb(12, 76, 132); 
+    
+}
+
+@media screen and (max-width: 768px) {
+    .button-container {
+        width: 15%; 
+    }
+}
+.school-icon-link {
+    text-decoration: none; 
+    color: rgb(127, 244, 255); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .icon-text {
+    margin-top: 5px;
+    font-size: 10px; 
+    font-family: 'Orbitron', sans-serif;
+  }
+  .faq-link{
+    margin-top: 5px; 
+    
+    font-size: 10px; 
+    font-family: 'Orbitron', sans-serif;
+  }
+  .faq-link .fa-solid {
+    display: block;
+    margin-bottom: 5px; 
+    margin-left: 10px;
+  }
+  
+  .icon-text {
+    display: block; 
+  }
+  .container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .option {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .option h2 {
+    margin-bottom: 20px;
+  }
